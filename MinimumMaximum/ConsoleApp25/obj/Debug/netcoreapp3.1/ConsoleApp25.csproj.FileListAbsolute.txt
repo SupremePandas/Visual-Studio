@@ -1,0 +1,14 @@
+C:\Users\andre\source\repos\ConsoleApp25\ConsoleApp25\bin\Debug\netcoreapp3.1\ConsoleApp25.exe
+C:\Users\andre\source\repos\ConsoleApp25\ConsoleApp25\bin\Debug\netcoreapp3.1\ConsoleApp25.deps.json
+C:\Users\andre\source\repos\ConsoleApp25\ConsoleApp25\bin\Debug\netcoreapp3.1\ConsoleApp25.runtimeconfig.json
+C:\Users\andre\source\repos\ConsoleApp25\ConsoleApp25\bin\Debug\netcoreapp3.1\ConsoleApp25.runtimeconfig.dev.json
+C:\Users\andre\source\repos\ConsoleApp25\ConsoleApp25\bin\Debug\netcoreapp3.1\ConsoleApp25.dll
+C:\Users\andre\source\repos\ConsoleApp25\ConsoleApp25\bin\Debug\netcoreapp3.1\ConsoleApp25.pdb
+C:\Users\andre\source\repos\ConsoleApp25\ConsoleApp25\obj\Debug\netcoreapp3.1\ConsoleApp25.csproj.AssemblyReference.cache
+C:\Users\andre\source\repos\ConsoleApp25\ConsoleApp25\obj\Debug\netcoreapp3.1\ConsoleApp25.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andre\source\repos\ConsoleApp25\ConsoleApp25\obj\Debug\netcoreapp3.1\ConsoleApp25.AssemblyInfoInputs.cache
+C:\Users\andre\source\repos\ConsoleApp25\ConsoleApp25\obj\Debug\netcoreapp3.1\ConsoleApp25.AssemblyInfo.cs
+C:\Users\andre\source\repos\ConsoleApp25\ConsoleApp25\obj\Debug\netcoreapp3.1\ConsoleApp25.csproj.CoreCompileInputs.cache
+C:\Users\andre\source\repos\ConsoleApp25\ConsoleApp25\obj\Debug\netcoreapp3.1\ConsoleApp25.dll
+C:\Users\andre\source\repos\ConsoleApp25\ConsoleApp25\obj\Debug\netcoreapp3.1\ConsoleApp25.pdb
+C:\Users\andre\source\repos\ConsoleApp25\ConsoleApp25\obj\Debug\netcoreapp3.1\ConsoleApp25.genruntimeconfig.cache
