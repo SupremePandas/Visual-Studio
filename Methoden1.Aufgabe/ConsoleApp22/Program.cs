@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace ConsoleApp22
 {
@@ -8,34 +8,35 @@ namespace ConsoleApp22
 		static double Eingabe() // mit rückgabe Wert / ohne Parameter
 		{
 			double Eingabe;
-			Console.WriteLine("Welche Zahl möchten Sie Quadrieren?\nGeben Sie eine Zahl ein: ");
+			Console.Write("Welche Zahl möchten Sie Quadrieren?\nGeben Sie eine Zahl ein: ");
 			Eingabe = Convert.ToDouble(Console.ReadLine());
 			return Eingabe;
 		}
 
 		static double Quadrat(double Zahl) // mit rückgabe Wert / mit Parameter
 		{
-			double Ergebnis; 
-			Ergebnis = Zahl * Zahl;
+			double Ergebnis;
+			Ergebnis = Math.Pow(Zahl, 2); // Zahl^2 = Potenzwert;
 			return Ergebnis;
 		}
 
 		static void Ausgabe(double Ergebnis) // ohne rückgabe Wert / mit Parameter
 		{
-			Console.WriteLine("Die Quadratzahl ist: {0}" ,Ergebnis);
+			Console.WriteLine("Die Quadratzahl ist: {0}", Ergebnis);
 		}
 
 		// Aufagabe 2:
 		/*
-		 * ohne Erweiterung Aufgabe 2
-			   static void Zeichne(int Grösse)
-			   {
+		ohne Erweiterung Aufgabe 2
+		static void Zeichne(){
 
-				   for(int i = 0; i <= Grösse; i++)
-				   Console.Write("_");
-			   }
+		Console.WriteLine(); 
+		for(int i = 0; i <= 80; i++)
+		Console.Write("_");
+		}
 		*/
 
+		//mit Erweiterung Aufgabe 2
 		static void Zeichne() // ohne rückgabe Wert / ohne Parameter
 		{
 			// Erweiterung 1
@@ -49,36 +50,47 @@ namespace ConsoleApp22
 			Console.WriteLine("Welches Zeichen?");
 			zeichen = Convert.ToString(Console.ReadLine());
 
-			// erzeugt Zeilenumbruch 
+			// erzeugt Zeilenumbruch
 			Console.WriteLine();
 
 			// Erweiterung 1 Methoden bedingungen
-			int x = Console.WindowWidth;
+			int Width = Console.WindowWidth;
 
-			if (Grösse < 1) {
-				while (true)
-				{
-					Console.Write(zeichen);
-				}	
+			if (Grösse < 1)
+			{
+				Console.Write(zeichen);
 			}
-			if (Grösse > x) { 
-				for(int i = 0; i < x; i++)
+			if (Grösse > Width)
+			{
+				for (int i = 0; i < Width; i++)
 					Console.Write(zeichen);
 			}
 			else
 			{
-				for(int i = 0; i < Grösse; i++)
+				for (int i = 0; i < Grösse; i++)
 					Console.Write(zeichen);
 			}
 		}
 
 		static void Main(string[] args)
 		{
-			for (int i = 0; i < 5; i++)
+			double Zahl;
+			double Ergebnis;
+		
+			try
 			{
-				Console.WriteLine(i);
+				Zahl = Eingabe();
+				Ergebnis = Quadrat(Zahl);
+				// Die Ausgabe und das Zeichnen
+				Ausgabe(Ergebnis);
+				Zeichne();
 			}
-			
+			// Ausgabe vom Fehler und den Grund
+			catch (Exception f)
+			{
+				Console.WriteLine("Fehler weil:" + f);
+			}
+
 			Console.ReadKey();
 		}
 	}
