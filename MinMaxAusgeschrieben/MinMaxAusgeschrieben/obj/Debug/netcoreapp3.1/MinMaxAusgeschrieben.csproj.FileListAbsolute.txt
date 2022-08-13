@@ -1,0 +1,14 @@
+C:\Users\andre\source\repos\MinMaxAusgeschrieben\MinMaxAusgeschrieben\bin\Debug\netcoreapp3.1\MinMaxAusgeschrieben.exe
+C:\Users\andre\source\repos\MinMaxAusgeschrieben\MinMaxAusgeschrieben\bin\Debug\netcoreapp3.1\MinMaxAusgeschrieben.deps.json
+C:\Users\andre\source\repos\MinMaxAusgeschrieben\MinMaxAusgeschrieben\bin\Debug\netcoreapp3.1\MinMaxAusgeschrieben.runtimeconfig.json
+C:\Users\andre\source\repos\MinMaxAusgeschrieben\MinMaxAusgeschrieben\bin\Debug\netcoreapp3.1\MinMaxAusgeschrieben.runtimeconfig.dev.json
+C:\Users\andre\source\repos\MinMaxAusgeschrieben\MinMaxAusgeschrieben\bin\Debug\netcoreapp3.1\MinMaxAusgeschrieben.dll
+C:\Users\andre\source\repos\MinMaxAusgeschrieben\MinMaxAusgeschrieben\bin\Debug\netcoreapp3.1\MinMaxAusgeschrieben.pdb
+C:\Users\andre\source\repos\MinMaxAusgeschrieben\MinMaxAusgeschrieben\obj\Debug\netcoreapp3.1\MinMaxAusgeschrieben.csproj.AssemblyReference.cache
+C:\Users\andre\source\repos\MinMaxAusgeschrieben\MinMaxAusgeschrieben\obj\Debug\netcoreapp3.1\MinMaxAusgeschrieben.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andre\source\repos\MinMaxAusgeschrieben\MinMaxAusgeschrieben\obj\Debug\netcoreapp3.1\MinMaxAusgeschrieben.AssemblyInfoInputs.cache
+C:\Users\andre\source\repos\MinMaxAusgeschrieben\MinMaxAusgeschrieben\obj\Debug\netcoreapp3.1\MinMaxAusgeschrieben.AssemblyInfo.cs
+C:\Users\andre\source\repos\MinMaxAusgeschrieben\MinMaxAusgeschrieben\obj\Debug\netcoreapp3.1\MinMaxAusgeschrieben.csproj.CoreCompileInputs.cache
+C:\Users\andre\source\repos\MinMaxAusgeschrieben\MinMaxAusgeschrieben\obj\Debug\netcoreapp3.1\MinMaxAusgeschrieben.dll
+C:\Users\andre\source\repos\MinMaxAusgeschrieben\MinMaxAusgeschrieben\obj\Debug\netcoreapp3.1\MinMaxAusgeschrieben.pdb
+C:\Users\andre\source\repos\MinMaxAusgeschrieben\MinMaxAusgeschrieben\obj\Debug\netcoreapp3.1\MinMaxAusgeschrieben.genruntimeconfig.cache
