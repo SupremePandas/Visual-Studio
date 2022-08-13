@@ -20,15 +20,15 @@ namespace MinMaxausgeschrieben
 
             for (int i = 0; i < Arraylength; i++)
             {
-				if (Aktienkurs[i] > max)
+		if (Aktienkurs[i] > max)
                 {
                     max = Aktienkurs[i];
                 }
 
-				if (Aktienkurs[i] < min)
-				{
-					min = Aktienkurs[i];
-				}
+		if (Aktienkurs[i] < min)
+		{
+	 	    min = Aktienkurs[i];
+		}
 
                 summe += Aktienkurs[i];
 
