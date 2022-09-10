@@ -1,0 +1,64 @@
+using System;
+
+
+namespace MethodenAufgabe1
+{
+	class Program
+	{
+
+		static void Linie(int Breite)
+		{
+				Console.WriteLine();
+				for (int i = 0; i < Breite; i++) Console.Write("\u2588");
+		}
+
+		static void Rand(int Breite, int Höhe)
+		{
+				for (int höhe = 0; höhe < (Höhe-2); höhe++)
+				{
+					Console.WriteLine();
+					Console.Write("\u2588");
+					for (int breite = 0; breite < (Breite - 2); breite++) Console.Write(" ");
+					Console.Write("\u2588");
+				}
+		}
+
+		static void Main(string[] args)
+		{
+			int Neustart = 0;
+			while (Neustart == 0) {
+				try
+				{
+					Console.WriteLine("Wie Breit soll dein Block sein?: ");
+					int Breite = Convert.ToInt32(Console.ReadLine());
+
+					Console.WriteLine("Wie Hoch soll dein Block sein?: ");
+					int Höhe = Convert.ToInt32(Console.ReadLine());
+
+					if ((Breite >=5) && (Breite <= 80) && (Höhe > 2)) {
+
+						Linie(Breite);
+						Rand(Breite, Höhe);
+						Linie(Breite);
+						Neustart--;
+						Console.WriteLine(" ");
+
+					}
+					else
+					{
+						Console.Clear();
+						Console.WriteLine("Fehler in der Eingabe: Neustart :>");
+					}
+		
+				}
+				catch (Exception)
+				{
+					Console.Clear();
+					Console.WriteLine("Fehler in der Eingabe: Neustart :>");
+				}	
+
+			}
+			Console.ReadKey();
+		}
+	}
+}
