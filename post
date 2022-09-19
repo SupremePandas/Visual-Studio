@@ -1,0 +1,78 @@
+using System;
+
+namespace ConsoleApp3
+{
+	class Program
+	{
+		static void Aufgabe1 (){
+
+			Console.WriteLine("Wie Groß ist ihr Packet?");
+			double EingabeGewicht = Convert.ToDouble(Console.ReadLine());
+
+			if (EingabeGewicht <= 20) Console.WriteLine("Preis = 0,62 Euro");
+			else if (EingabeGewicht <= 50) Console.WriteLine("Preis = 0,85 Euro");
+			else if (EingabeGewicht <= 500) Console.WriteLine("Preis = 1,45 Euro");
+			else if (EingabeGewicht <= 1000) Console.WriteLine("Preis = 2,40 Euro");
+			else if (EingabeGewicht <= 1000) Console.WriteLine("Preis = 6,90 Euro");		
+		}
+
+		static void Zusatz1()
+		{
+			double kosten = 0;
+
+			Console.WriteLine("Wie Groß ist ihr Packet?");
+			double EingabeGewicht = Convert.ToDouble(Console.ReadLine());
+
+			Console.WriteLine("1 für Expressversand 2 für Normalversand");
+			int Versand = Convert.ToInt32(Console.ReadLine());
+			if (Versand == 2)
+			{
+				AusgabevonPreis(kosten, EingabeGewicht);
+			}
+			else
+			{
+				kosten = 12.90;
+				AusgabevonPreis(kosten, EingabeGewicht);
+			}
+		}
+
+		static void AusgabevonPreis(double kosten,double EingabeGewicht)
+		{
+			if (EingabeGewicht <= 1000) Console.WriteLine("Preis = {0} Euro", 3.60 + kosten);
+			else if (EingabeGewicht <= 5000) Console.WriteLine("Preis = {0} Euro", 7.20 + kosten);
+			else if (EingabeGewicht <= 10000) Console.WriteLine("Preis = {0} Euro", 8.90 + kosten);
+			else if (EingabeGewicht <= 15000) Console.WriteLine("Preis = {0} Euro", 10.60 + kosten);
+		}
+
+		static void Main(string[] args)
+		{
+
+			int wdh = 1;
+			while (wdh == 1)
+			{
+				try
+				{
+					Console.WriteLine("Möchten Sie ein Packet Abschicken oder ein Brief? 1: Packet 2: Brief");
+					int Auswahl = Convert.ToInt32(Console.ReadLine());
+					if (Auswahl == 1) Zusatz1();
+					if (Auswahl == 2) Aufgabe1();
+					if (Auswahl > 2 || Auswahl <= 0) Console.WriteLine("Fehler");
+					
+
+					Console.WriteLine("Möchten sie es nochmal Ausführen? 1: Ja 2: Nein");
+					wdh = Convert.ToInt32(Console.ReadLine());
+				}
+
+
+				catch
+				{
+					Console.Clear();
+					Console.WriteLine("Neustart");
+				}
+
+
+			}
+
+		}
+	}
+}
