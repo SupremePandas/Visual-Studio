@@ -1,7 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Threading;
-using System.Linq;
 
 
 namespace AktProjekt_PasswortGenerator_
