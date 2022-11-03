@@ -88,7 +88,7 @@ namespace AktProjekt_PasswortGenerator_
             {
                 Console.WriteLine("Zeichenlänge der Passwörter: ");
                 int Passwortlänge = Convert.ToInt32(Console.ReadLine());
-                if (Passwortlänge >= 4 || Passwortlänge <= 16)
+                if (Passwortlänge >= 4 && Passwortlänge <= 16)
                 {
                     Console.WriteLine("Anzahl der Passwörter: ");
                     int AnzahlPasswörter = Convert.ToInt32(Console.ReadLine());
