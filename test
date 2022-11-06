@@ -1,0 +1,168 @@
+using System;
+using System.IO;
+using System.Text;
+
+
+namespace AktProjekt_PasswortGenerator_
+{
+
+    class Program
+    {
+        private readonly static Random Zahl = new Random();
+
+        private static void Dateinschreiben(string path, int Passwortlänge, int totalnumber, int Auswahl)
+        {
+            StreamWriter DateiSchreiben = new StreamWriter(path, false, Encoding.Default);
+            for (int i = 0; i < totalnumber; i++)
+            {
+                string Passwort = ÜberPrüfungvonPasswortundRückgabe(Passwortlänge, Auswahl);
+                DateiSchreiben.WriteLine(Passwort);
+            }
+            DateiSchreiben.Close();
+        }
+
+        #region Passwortgenerator
+        private static string PasswortGenerator(int PasswordLänge, int Befehl)
+        {
+            string Zeichen = "";
+            if (Befehl == 1) Zeichen = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            if (Befehl == 2) Zeichen = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789#$%&'()*+,-./";
+
+            string RandomPasswort = "";
+
+            for (int i = 0; i < PasswordLänge; i++)
+            {
+                int Randomnummer = Zahl.Next(0, Zeichen.Length);
+                RandomPasswort += Zeichen[Randomnummer];
+            }
+            return RandomPasswort;
+        }
+
+        private static int Zifferzähler(string Passwort)
+        {
+            string Ziffern = "0123456789";
+            int Zähler = 0;
+            for (int i = 0; i < Passwort.Length; i++)
+            {
+                for (int x = 0; x < Ziffern.Length; x++)
+                {
+                    if (Passwort[i] == Ziffern[x])
+                    {
+                        Zähler++;
+                    }
+                }
+            }
+            return Zähler;
+        }
+
+        private static string ÜberPrüfungvonPasswortundRückgabe(int PasswordLänge, int Befehl)
+        {
+            string Passwort = PasswortGenerator(PasswordLänge, Befehl);
+            int Zähler = Zifferzähler(Passwort);
+
+            if (Passwort.Length < 6)           
+                Passwort = Neugenerierung(Zähler, 2, PasswordLänge, Befehl, Passwort);
+            
+            else if (Passwort.Length < 10)
+                Passwort = Neugenerierung(Zähler, 3, PasswordLänge, Befehl, Passwort);
+            
+            else if (Passwort.Length > 10)         
+                Passwort = Neugenerierung(Zähler, 4 , PasswordLänge, Befehl, Passwort);
+          
+            return Passwort;
+        }
+
+        public static string Neugenerierung(int Zähler, int Anzahl, int PasswortLänge, int Befehl, string Passwort)
+        {
+            while (Zähler != Anzahl)
+            {
+                Passwort = PasswortGenerator(PasswortLänge, Befehl);
+                Zähler = Zifferzähler(Passwort);
+            }
+            return Passwort;
+        }
+
+        #endregion
+
+        #region User-Interface
+        private static void Interface()
+        {
+            try
+            {
+                while (true) {
+
+                    Console.Write("Bitte treffen Sie eine Auswahl: \n   1. Passwörter aus Alphabet und Ziffern\n   2. Passwörter aus Alphabet, Ziffern und Sonderzeichen\nAuswahl: ");
+                    Console.BackgroundColor = ConsoleColor.DarkGray;
+                    int Auswahl = Convert.ToInt32(Console.ReadLine());
+                    Console.BackgroundColor = ConsoleColor.Black;
+
+                    if (Auswahl == 1 || Auswahl == 2)
+                    {
+                        Console.Write("\n\nZeichenlänge der Passwörter: ");
+                        Console.BackgroundColor = ConsoleColor.DarkGray;
+                        int Passwortlänge = Convert.ToInt32(Console.ReadLine());
+                        Console.BackgroundColor = ConsoleColor.Black;
+
+                        if (Passwortlänge >= 4 && Passwortlänge <= 16)
+                        {
+                            Console.Write("Anzahl der Passwörter: ");
+                            Console.BackgroundColor = ConsoleColor.DarkGray;
+                            int AnzahlPasswörter = Convert.ToInt32(Console.ReadLine());
+                            Console.BackgroundColor = ConsoleColor.Black;
+
+                            if (AnzahlPasswörter >= 1)
+                            {
+                                Console.Write("Dateiausgabe? (J/n): ");
+                                Console.BackgroundColor = ConsoleColor.DarkGray;
+                                string Dateiausgabe = Convert.ToString(Console.ReadLine());
+                                Console.BackgroundColor = ConsoleColor.Black;
+
+                                if (Dateiausgabe == "n")
+                                {
+                                    Console.WriteLine("\nListe der Passwörter:");
+                                    for (int i = 0; i < AnzahlPasswörter; i++)
+                                    {
+                                        string Passwort = ÜberPrüfungvonPasswortundRückgabe(Passwortlänge, Auswahl);
+                                        Console.WriteLine(Passwort);
+                                    }
+                                    break;
+                                }
+                                else if (Dateiausgabe == "J")
+                                {
+                                    Console.Write("Dateiausgabe in: ");
+                                    Console.BackgroundColor = ConsoleColor.DarkGray;
+                                    string Path = Convert.ToString(Console.ReadLine());
+                                    Console.BackgroundColor = ConsoleColor.Black;
+
+                                    if (!File.Exists(Path))
+                                        Console.WriteLine("Fehler: Datei nicht vorhanden");
+                                    
+                                    else
+                                    {
+                                        Dateinschreiben(Path, Passwortlänge, AnzahlPasswörter, Auswahl);
+                                        Console.WriteLine("Fertig");
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    Console.WriteLine("Es gab einen Fehler");
+                    break;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.WriteLine("Fehler weil:" + e);
+            }
+        }
+        #endregion
+
+        private static void Main(string[] args)
+        {
+            Interface();
+            Console.ReadKey();
+        }
+    }
+}
